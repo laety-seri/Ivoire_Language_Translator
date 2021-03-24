@@ -77,8 +77,8 @@
             <input type="submit" value="Traduire" name="Traduire" class="btn btn-success" onclick="reload();">
         </div>
         <div> 
-          <div class="col col-sm-4" id="champ1status">
-              <textarea class="textarea" name="champ1" id="champ1" onkeyup="check();">                    
+          <div class="col col-sm-4">
+              <textarea class="textarea" id="champ1status" disabled>                    
                 <?php
                 if (isset($_POST['Traduire'])) {
                 $search_text = $_POST['champ1'];
