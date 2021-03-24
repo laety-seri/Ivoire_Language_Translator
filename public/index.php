@@ -57,13 +57,13 @@
       </div>
       <div class="row">
         <div class="col col-sm-4">
-          <textarea class="textarea" rows="4" cols="30"  name="champ1" id="champ1" onkeyup="check();"></textarea>
+          <textarea class="textarea" rows="10" cols="50"  name="champ1" id="champ1" onkeyup="check();"></textarea>
         </div>
         <div class="col col-sm-4">
-            <input type="submit" value="<i class='fas fa-exchange-alt'></i>" name="Traduire" class="btn btn-success" onclick="reload();">
+            <input type="submit" value="Traduire" name="Traduire" class="btn btn-success" onclick="reload();">
         </div> 
           <div class="col col-sm-4">
-              <textarea class="textarea" rows="4" cols="30"  id="champ1status" disabled>                    
+              <textarea class="textarea" rows="10" cols="50"  id="champ1status" disabled>                    
                 <?php
                 if (isset($_POST['Traduire'])) {
                 $search_text = $_POST['champ1'];
