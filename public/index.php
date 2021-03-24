@@ -90,12 +90,11 @@
                                 <p> <font color = 'red'> Traduction non disponible <br> <a href="addtextusers.php">Soumettre une proposition de traduction</a></p>
                             </div>
                           </div>
-                        <?php } ?>                        
+                        <?php }}} ?>                        
               </textarea>
             </div>
           </div>
         </form>
-      <?php }} ?>
 
   </div>
 </body>
