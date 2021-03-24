@@ -16,20 +16,6 @@
       .form-group{
         margin-left: 30px;
       }
-      /* .textarea {
-        margin-left: 20px;
-        resize: unset;
-      } */
-      .tradwindow {
-        margin-left: 600px;
-        margin-bottom: 80px;
-        background-color: white;
-        border-style: solid;
-        border-width: 2px;
-        border-color: black;
-        width: 400px;
-        height: 100px;
-      }
 
     </style>
     <body class="">
@@ -99,16 +85,17 @@
                         <audio controls>
                           <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
                         </audio>
+                        <?php } else { ?>
+                            <div>
+                                <p> <font color = 'red'> Traduction non disponible <br> <a href="addtextusers.php">Soumettre une proposition de traduction</a></p>
+                            </div>
+                          </div>
+                        <?php } ?>                        
               </textarea>
             </div>
           </div>
-            <?php } else { ?>
-                <div>
-                    <p> <font color = 'red'> Traduction non disponible <br> <a href="addtextusers.php">Soumettre une proposition de traduction</a></p>
-                </div>
-              </div>
-            </form>
-            <?php }}} ?>
+        </form>
+      <?php }} ?>
 
   </div>
 </body>
