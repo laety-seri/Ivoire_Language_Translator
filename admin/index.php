@@ -12,7 +12,7 @@ session_start();
         <header>
             <br><br>
             <center> <h3 class="text-success">IVOIRE LANGUAGE TRANSLATOR </h3><br><br>
-            <a href="#"><img src="logo.PNG" alt="logo" height="250" width="250"></a>
+            <a href="#"><img src="../admin/logo.png" alt="logo" height="250" width="250"></a>
             </center>
         </header>
         <div class="text-center">
