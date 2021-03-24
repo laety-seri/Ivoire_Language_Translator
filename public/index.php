@@ -68,10 +68,13 @@
           </select>
           <br><br>
         </div>
-    </div>
-    <div class="row">
-        <div class="col col-sm-6">
-            <textarea class="textarea" name="champ1" id="champ1" onkeyup="check();"></textarea>
+      </div>
+      <div class="row">
+        <div class="col col-sm-4">
+          <textarea class="textarea" name="champ1" id="champ1" onkeyup="check();"></textarea>
+        </div>
+        <div class="col col-sm-4">
+            <input type="submit" value="Traduire" name="Traduire" class="btn btn-success" onclick="reload();">
         </div>
         <?php
       if (isset($_POST['Traduire'])) {
@@ -90,7 +93,7 @@
 
             if($row = mysqli_fetch_array($result)) { ?>
                 <div id="reponse"> 
-                  <div class="col col-sm-6" id="champ1status">
+                  <div class="col col-sm-4" id="champ1status">
                       <textarea class="textarea" name="champ1" id="champ1" onkeyup="check();">                    
                         <?php echo $row['texte2']?> <br>
                         <audio controls>
@@ -104,15 +107,9 @@
                     <p> <font color = 'red'> Traduction non disponible <br> <a href="addtextusers.php">Soumettre une proposition de traduction</a></p>
                 </div>
     <?php }}} ?>
-
-
-
     </div>
-    <div class="row">
-        <div class="col col-sm-6">
-            <input type="submit" value="Traduire" name="Traduire" class="btn btn-success" onclick="reload();">
-        </div>
-    </div>
+    <!-- <div class="row">
+    </div> -->
     </form>
 
     <!-- <div class="tradwindow" id="champ1status">
