@@ -74,7 +74,7 @@
             <textarea class="textarea" name="champ1" id="champ1" cols="50" rows="5" onkeyup="check();"></textarea>
         </div>
         <div class="col col-sm-6">
-
+            <textarea class="textarea" name="champ1" id="champ1" cols="50" rows="5" onkeyup="check();"></textarea>
         </div>
     </div>
     <div class="row">

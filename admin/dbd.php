@@ -104,7 +104,7 @@ if(isset($_SESSION['nometprenoms'])){
 
     
         <div class="chip heading text-center text-uppercase text-white mb-3">
-            <img src="logo.PNG" alt="logo" width="96" height="96">
+            <img src="../admin/logo.png" alt="logo" width="96" height="96">
                 Bienvenue : <?php echo $role ; ?> <?php echo $nometprenoms ; ?> <br></br>
         </div>
  
@@ -204,7 +204,7 @@ if(isset($_SESSION['nometprenoms'])){
     <p>
 
       <div class="chip heading text-center text-uppercase text-white mb-3">
-        <img src="logo.PNG" alt="logo" width="96" height="96">
+        <img src="../admin/logo.png" alt="logo" width="96" height="96">
         Bienvenue : <?php echo $role ; ?> <?php echo $nometprenoms; ?> <br></br>
       </div>
 
@@ -349,7 +349,7 @@ if(isset($_SESSION['nometprenoms'])){
     <p>
 
   <div class="chip heading text-center text-uppercase text-white mb-3">
-  <img src="logo.PNG" alt="logo" width="96" height="96">
+  <img src="../admin/logo.png" alt="logo" width="96" height="96">
    Bienvenue : <?php echo $role ; ?> <?php echo $nometprenoms; ?> <br></br>
   </div>
 
