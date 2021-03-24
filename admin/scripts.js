@@ -6,7 +6,7 @@ $(document).ready( function () {
     $('#trad2').dataTable();
     } );
 
-    function check() {
+function check() {
         // ... ajouter la fonction ajax ... //
     
         var champ1=document.getElementById( "champ1" ).value;
@@ -39,7 +39,7 @@ $(document).ready( function () {
             }
     }
     
-    function checkall()
+function checkall()
     {
         var texte1html=document.getElementById("champ1status").innerHTML;
     

@@ -61,8 +61,7 @@
         </div>
         <div class="col col-sm-4">
             <input type="submit" value="Traduire" name="Traduire" class="btn btn-success" onclick="reload();">
-        </div>
-        <div> 
+        </div> 
           <div class="col col-sm-4">
               <textarea class="textarea" rows="4" cols="30"  id="champ1status" disabled>                    
                 <?php
@@ -92,7 +91,6 @@
                           </div>
                         <?php }}} ?>                        
               </textarea>
-            </div>
           </div>
         </form>
 

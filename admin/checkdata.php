@@ -10,25 +10,16 @@
     $row = mysqli_fetch_array($query);
     
     if($count>0){ ?>
-        <h5 style="color: green;"> <?php echo $row['texte2']; ?> <h5>
-       
-        <audio controls>
-            <source src="<?php echo $row['audio']; ?>" type='audio/mpeg' >
-        </audio>               
+        <?php echo $row['texte2']; ?>      
+        <?php echo $row['audio']; ?>
 
     <?php } else { ?>
         <h5 style="color: red;"> Traduction non disponible <br><br> <a href='addtextusers.php'>Soumettre une proposition de traduction</a></h5>
-    <?php }exit(); } ?>
+    <?php } exit(); 
+} ?>
 
 
-    <?php   
-
-   
-
-
-    
-
-
+<?php   
 if(isset($_POST['texte2']))
 {
    
