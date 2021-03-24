@@ -76,6 +76,9 @@
         <div class="col col-sm-4">
             <input type="submit" value="Traduire" name="Traduire" class="btn btn-success" onclick="reload();">
         </div>
+        <div id="reponse"> 
+          <div class="col col-sm-4" id="champ1status">
+              <textarea class="textarea" name="champ1" id="champ1" onkeyup="check();">                    
         <?php
       if (isset($_POST['Traduire'])) {
         $search_text = $_POST['champ1'];
@@ -91,11 +94,8 @@
           $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
             $result = mysqli_query($con, $query);
 
-            if($row = mysqli_fetch_array($result)) { ?>
-                <div id="reponse"> 
-                  <div class="col col-sm-4" id="champ1status">
-                      <textarea class="textarea" name="champ1" id="champ1" onkeyup="check();">                    
-                        <?php echo $row['texte2']?> <br>
+            if($row = mysqli_fetch_array($result)) { 
+              echo $row['texte2']?> <br>
                         <audio controls>
                         <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
                         </audio>
