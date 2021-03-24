@@ -79,29 +79,29 @@
         <div id="reponse"> 
           <div class="col col-sm-4" id="champ1status">
               <textarea class="textarea" name="champ1" id="champ1" onkeyup="check();">                    
-        <?php
-      if (isset($_POST['Traduire'])) {
-        $search_text = $_POST['champ1'];
-        $langue_start = $_POST['langue_start'];
-        $langue_end = $_POST['langue_end'];
-        $ip = $_SERVER['REMOTE_ADDR'];
+                <?php
+                if (isset($_POST['Traduire'])) {
+                $search_text = $_POST['champ1'];
+                $langue_start = $_POST['langue_start'];
+                $langue_end = $_POST['langue_end'];
+                $ip = $_SERVER['REMOTE_ADDR'];
 
-        $date = date("Y-m-d h:i:s");
-        $sql = "INSERT INTO recherches (search_text, langue_start, langue_end, ip, date) VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
+                $date = date("Y-m-d h:i:s");
+                $sql = "INSERT INTO recherches (search_text, langue_start, langue_end, ip, date) VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
 
-        if (mysqli_query($con, $sql)) {
+                if (mysqli_query($con, $sql)) {
 
-          $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
-            $result = mysqli_query($con, $query);
+                  $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
+                    $result = mysqli_query($con, $query);
 
-            if($row = mysqli_fetch_array($result)) { 
-              echo $row['texte2']?> <br>
+                    if($row = mysqli_fetch_array($result)) { 
+                      echo $row['texte2']?> <br>
                         <audio controls>
-                        <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
+                          <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
                         </audio>
-                    </textarea>
-                  </div>
-                </div>
+              </textarea>
+            </div>
+          </div>
             <?php } else { ?>
                 <div>
                     <p> <font color = 'red'> Traduction non disponible <br> <a href="addtextusers.php">Soumettre une proposition de traduction</a></p>
@@ -110,36 +110,7 @@
     </div>
     </form>
 
-    <!-- <div class="tradwindow" id="champ1status">
-    <?php
-      if (isset($_POST['Traduire'])) {
-        $search_text = $_POST['champ1'];
-        $langue_start = $_POST['langue_start'];
-        $langue_end = $_POST['langue_end'];
-        $ip = $_SERVER['REMOTE_ADDR'];
-
-        $date = date("Y-m-d h:i:s");
-        $sql = "INSERT INTO recherches (search_text, langue_start, langue_end, ip, date) VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
-
-        if (mysqli_query($con, $sql)) {
-
-          $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
-            $result = mysqli_query($con, $query);
-
-            if($row = mysqli_fetch_array($result)) { ?>
-                <div id="reponse"> 
-                    <?php echo $row['texte2']?> <br>
-                    <audio controls>
-                    <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
-                    </audio>
-                </div>
-            <?php } else { ?>
-                <div>
-                    <p> <font color = 'red'> Traduction non disponible <br> <a href="addtextusers.php">Soumettre une proposition de traduction</a></p>
-                </div>
-    <?php }}} ?>
-    </div> -->
-    </div>
+  </div>
 <script>
   function check() {
     // ... ajouter la fonction ajax ... //
