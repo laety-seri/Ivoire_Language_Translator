@@ -108,8 +108,6 @@
                 </div>
     <?php }}} ?>
     </div>
-    <!-- <div class="row">
-    </div> -->
     </form>
 
     <!-- <div class="tradwindow" id="champ1status">
