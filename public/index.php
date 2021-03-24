@@ -89,8 +89,11 @@
                         <?php }}} ?>                        
               </textarea>
           </div>
-        </form>
+        </form> <br><br><br>
 
   </div>
+<footer>
+  <p style="text-align: center;"> Copyright &copy; 2021 </p>
+</footer>
 </body>
 </html>
