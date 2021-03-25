@@ -63,7 +63,7 @@
           <input type="submit" value="Traduire" name="Traduire" class="btn btn-sm btn-success form-control" onclick="reload();">
       </div> 
       <div class="col col-sm-4">
-        <textarea class="textarea form-control" rows="5" cols="30"  id="champ1status" disabled>                    
+        <textarea class="textarea form-control" rows="5" cols="30"  id="champ1status">                    
           <?php
           if (isset($_POST['Traduire'])) {
           $search_text = $_POST['champ1'];
