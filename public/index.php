@@ -6,6 +6,7 @@
     <title>Traduction</title>
     <?php include('../admin/links.php') ?>
     <style>
+      
       .traduction{
         background-color: lightgrey;
         border-style: solid;
@@ -13,16 +14,16 @@
         border-color: black;
         text-align: center;
         border-radius: 15px;
-        margin: 30px;
+        padding: 30px;
       }
    
 
     </style>
 <body>
   <header>
-    <div class="row">
+    <div class="row" style="margin-left: auto;">
     <a href="#"><img src="../admin/logo.png" alt="logo" height="60" width="60"></a>
-    <h3 class="text-success"><a href="index.php"> IVOIRE LANGUAGE TRANSLATOR </a></h3>
+    <h3 class="text-success text-sm"><a href="index.php"> IVOIRE <br> LANGUAGE <br> TRANSLATOR </a></h3>
     </div>
   </header>
 <!-- espace traduction  test-->
@@ -53,47 +54,47 @@
             ?> 
           </select> <br><br>
         </div>
+    </div>
+    <div class="row">
+      <div class="col col-sm-4">
+        <textarea class="textarea form-control" rows="5" cols="30"  name="champ1" id="champ1" onkeyup="check();"></textarea>
       </div>
-      <div class="row">
-        <div class="col col-sm-4">
-          <textarea class="textarea form-control" rows="5" cols="30"  name="champ1" id="champ1" onkeyup="check();"></textarea>
-        </div>
-        <div class="col col-sm-4">
-            <input type="submit" value="Traduire" name="Traduire" class="btn btn-sm btn-success form-control" onclick="reload();">
-        </div> 
-          <div class="col col-sm-4">
-              <textarea class="textarea form-control" rows="5" cols="30"  id="champ1status" disabled>                    
-                <?php
-                if (isset($_POST['Traduire'])) {
-                $search_text = $_POST['champ1'];
-                $langue_start = $_POST['langue_start'];
-                $langue_end = $_POST['langue_end'];
-                $ip = $_SERVER['REMOTE_ADDR'];
+      <div class="col col-sm-4">
+          <input type="submit" value="Traduire" name="Traduire" class="btn btn-sm btn-success form-control" onclick="reload();">
+      </div> 
+      <div class="col col-sm-4">
+        <textarea class="textarea form-control" rows="5" cols="30"  id="champ1status" disabled>                    
+          <?php
+          if (isset($_POST['Traduire'])) {
+          $search_text = $_POST['champ1'];
+          $langue_start = $_POST['langue_start'];
+          $langue_end = $_POST['langue_end'];
+          $ip = $_SERVER['REMOTE_ADDR'];
 
-                $date = date("Y-m-d h:i:s");
-                $sql = "INSERT INTO recherches (search_text, langue_start, langue_end, ip, date) VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
+          $date = date("Y-m-d h:i:s");
+          $sql = "INSERT INTO recherches (search_text, langue_start, langue_end, ip, date) VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
 
-                if (mysqli_query($con, $sql)) {
+          if (mysqli_query($con, $sql)) {
 
-                  $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
-                    $result = mysqli_query($con, $query);
+            $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
+              $result = mysqli_query($con, $query);
 
-                    if($row = mysqli_fetch_array($result)) { 
-                      echo $row['texte2']?> <br>
-                        <audio controls>
-                          <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
-                        </audio>
-                        <?php } else { ?>
-                            <div>
-                                <p> <font color = 'red'> Traduction non disponible <br> <a href="addtextusers.php">Soumettre une proposition de traduction</a></p>
-                            </div>
-                          </div>
-                        <?php }}} ?>                        
-              </textarea>
-          </div>
-        </form> <br><br><br>
-
-  </div>
+              if($row = mysqli_fetch_array($result)) { 
+                echo $row['texte2']?> <br>
+                  <audio controls>
+                    <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
+                  </audio>
+                  <?php } else { ?>
+                  <div>
+                      <p> <font color = 'red'> Traduction non disponible <br> <a href="addtextusers.php">Soumettre une proposition de traduction</a></p>
+                  </div>
+                  <?php }}} ?>                        
+        </textarea>
+      </div>
+    </div>
+  </form> 
+  <br><br><br>
+</div>
 
 </body>
 </html>
