@@ -13,14 +13,18 @@
         border-color: black;
         text-align: center;
         border-radius: 15;
+        margin: 5px;
       }
    
 
     </style>
 <body>
   <header>
-    <a href="#"><img src="../admin/logo.png" alt="logo" height="60" width="60"></a>
-    <div class="row"> <h3 class="text-success"><a href="index.php"> IVOIRE LANGUAGE TRANSLATOR </a></h3>
+    <div class="row"> 
+      <a href="index.php">
+        <img src="../admin/logo.png" alt="logo" height="60" width="60">
+        <h3 class="text-success"> IVOIRE <br> LANGUAGE <br> TRANSLATOR </h3>
+      </a>
     </div>
   </header>
 <!-- espace traduction  test-->
