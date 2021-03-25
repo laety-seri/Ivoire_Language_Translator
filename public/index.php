@@ -12,17 +12,17 @@
         border-width: 1px;
         border-color: black;
         text-align: center;
+        border-radius: 15;
       }
    
 
     </style>
-    <body>
-
-      <header>
-        <center> <h3 class="text-success"><a href="index.php"> IVOIRE LANGUAGE TRANSLATOR </a></h3>
-        <a href="#"><img src="../admin/logo.png" alt="logo" height="160" width="160"></a>
-        </center>
-      </header>
+<body>
+  <header>
+    <a href="#"><img src="../admin/logo.png" alt="logo" height="60" width="60"></a>
+    <div class="row"> <h3 class="text-success"><a href="index.php"> IVOIRE LANGUAGE TRANSLATOR </a></h3>
+    </div>
+  </header>
 <!-- espace traduction  test-->
 <div class="container traduction"> <br>
   <form action="" method="POST" enctype="multipart/form-data" onsubmit="checkall(); " >
@@ -54,13 +54,13 @@
       </div>
       <div class="row">
         <div class="col col-sm-4">
-          <textarea class="textarea form-control" rows="8" cols="40"  name="champ1" id="champ1" onkeyup="check();"></textarea>
+          <textarea class="textarea form-control" rows="5" cols="30"  name="champ1" id="champ1" onkeyup="check();"></textarea>
         </div>
         <div class="col col-sm-4">
-            <input type="submit" value="Traduire" name="Traduire" class="btn btn-success form-control" onclick="reload();">
+            <input type="submit" value="Traduire" name="Traduire" class="btn btn-sm btn-success form-control" onclick="reload();">
         </div> 
           <div class="col col-sm-4">
-              <textarea class="textarea form-control" rows="8" cols="40"  id="champ1status" disabled>                    
+              <textarea class="textarea form-control" rows="5" cols="30"  id="champ1status" disabled>                    
                 <?php
                 if (isset($_POST['Traduire'])) {
                 $search_text = $_POST['champ1'];
@@ -92,8 +92,6 @@
         </form> <br><br><br>
 
   </div>
-<footer>
-  <p style="text-align: center;"> Copyright &copy; 2021 </p>
-</footer>
+
 </body>
 </html>

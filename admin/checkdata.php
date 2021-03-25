@@ -11,7 +11,9 @@
     
     if($count>0){ ?>
         <?php echo $row['texte2']; ?>      
-        <?php echo $row['audio']; ?>
+        <audio controls>
+            <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
+        </audio>
 
     <?php } else { ?>
         <h5 style="color: red;"> Traduction non disponible <br><br> <a href='addtextusers.php'>Soumettre une proposition de traduction</a></h5>
