@@ -1,27 +1,34 @@
-<?php include("connection.php"); ?>
+<?php
+include("connection.php");
 
-<?php if(isset($_POST['champ1'])) {
+if(isset($_POST['champ1'])) {
            
       
     $champ1=$_POST['champ1'];
+    //$langue_start=$_POST['langue_start'];
+   // $langue_end=$_POST['langue_end'];
+    
+
     $checkdata=" SELECT * FROM data WHERE texte1='$champ1' ";
+
+
     $query = mysqli_query($con, $checkdata);
     $count = mysqli_num_rows($query);
     $row = mysqli_fetch_array($query);
     
-    if($count>0){ ?>
-        <?php echo $row['texte2']; ?>      
-        <audio controls>
-            <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
-        </audio>
+    if($count>0){
+        echo "<h5><font color = 'green'>" .$row['texte2'] . "<h5>";
+       
+        echo "<audio controls>" ;
+            echo " <source src=" . $row['audio'] . " type='audio/mpeg' >" ;
+        echo "</audio>";                
 
-    <?php } else { ?>
-        <h5 style="color: red;"> Traduction non disponible <br><br> <a href='addtextusers.php'>Soumettre une proposition de traduction</a></h5>
-    <?php } exit(); 
-} ?>
+    } else {
+        echo"<h5> <font color = 'red'> Traduction non disponible <br><br> <a href='addtextusers.php'>Soumettre une proposition de traduction</a></h5>";
+    }
+    exit();
+}
 
-
-<?php   
 if(isset($_POST['texte2']))
 {
    
@@ -53,8 +60,7 @@ if(isset($_POST['texte2']))
     }
     exit();
 }
-?>
-<?php
+
 if(isset($_POST['email']))
 {
    
