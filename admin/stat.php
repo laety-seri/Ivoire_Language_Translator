@@ -47,9 +47,9 @@
                     [{
                         label: 'count',
                         data: [<?php echo $count; ?>],
-                        backgroundColor: 'transparent',
+                        backgroundColor: 'green',
                         borderColor: 'rgba (0,255,255) ',
-                        borderWidth: 3
+                        borderWidth: 1
                     }]
                 },
 
