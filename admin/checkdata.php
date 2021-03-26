@@ -24,7 +24,7 @@ if(isset($_POST['champ1'])) {
         echo "</audio>";                
 
     } else {
-        echo"<h5> <font color = 'red'> Traduction non disponible <br><br> <a href='suggestions.php'>Soumettre une proposition de traduction</a></h5>";
+        echo"<h5> <font color = 'red'> Traduction non disponible <br><br> <a href='addtextusers.php'>Soumettre une proposition de traduction</a></h5>";
     }
     exit();
 }

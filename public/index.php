@@ -60,7 +60,7 @@
         <textarea class="textarea form-control" rows="5" cols="30"  name="champ1" id="champ1" onkeyup="check();"></textarea>
       </div>
       <div class="col col-sm-4" style="background-color: lightgrey;">
-          <input type="submit" value="" name="Traduire" class="form-control" onclick="reload();">
+          <input type="submit" value="" name="Traduire" class="form-control btn-sm" onclick="reload();">
 
       </div> 
       <div class="col col-sm-4" style="background-color: white;">
@@ -91,7 +91,7 @@
                 </div>
             <?php } else { ?>
                 <div>
-                    <p> <font color = 'red'> Traduction non disponible <br> <a href="suggestions.php">Soumettre une proposition de traduction</a></p>
+                    <p> <font color = 'red'> Traduction non disponible <br> <a href="addtextusers.php">Soumettre une proposition de traduction</a></p>
                 </div>
     <?php }}} ?>                    
             </div>
