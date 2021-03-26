@@ -61,7 +61,7 @@
       </div>
       <div class="col col-sm-4" style="background-color: lightgrey;">
           <!-- <input type="submit" value=""  class="form-control-sm btn btn-success" onclick="reload();"> -->
-          <button type="submit" name="Traduire" class="form-control-sm btn btn-success"><i class="fas fa-exchange-alt"></i></button>
+          <button type="submit" name="Traduire" class="form-control btn"><i class="fas fa-exchange-alt"></i></button>
 
       </div> 
       <div class="col col-sm-4" style="background-color: white;">
