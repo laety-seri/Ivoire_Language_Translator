@@ -63,33 +63,37 @@
           <input type="submit" value="Traduire" name="Traduire" class="btn btn-sm btn-success form-control" onclick="reload();">
       </div> 
       <div class="col col-sm-4">
-        <textarea class="textarea form-control" rows="5" cols="30"  id="champ1status">                    
-          <?php
-          if (isset($_POST['Traduire'])) {
-          $search_text = $_POST['champ1'];
-          $langue_start = $_POST['langue_start'];
-          $langue_end = $_POST['langue_end'];
-          $ip = $_SERVER['REMOTE_ADDR'];
+        <div  id="champ1status">                    
+        <?php
+    
+    if (isset($_POST['Traduire'])) {
 
-          $date = date("Y-m-d h:i:s");
-          $sql = "INSERT INTO recherches (search_text, langue_start, langue_end, ip, date) VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
+        $search_text = $_POST['champ1'];
+        $langue_start = $_POST['langue_start'];
+        $langue_end = $_POST['langue_end'];
+        $ip = $_SERVER['REMOTE_ADDR'];
 
-          if (mysqli_query($con, $sql)) {
+        $date = date("Y-m-d h:i:s");
+        $sql = "INSERT INTO recherches (search_text, langue_start, langue_end, ip, date) VALUES ('$search_text','$langue_start','$langue_end', '$ip', '$date')";
 
-            $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
-              $result = mysqli_query($con, $query);
+        if (mysqli_query($con, $sql)) {
 
-              if($row = mysqli_fetch_array($result)) { 
-                echo $row['texte2']?> <br>
-                  <audio controls>
+          $query = "SELECT * FROM data WHERE texte1 = '$search_text' AND langue_start = '$langue_start' AND langue_end = '$langue_end' ";
+            $result = mysqli_query($con, $query);
+
+            if($row = mysqli_fetch_array($result)) { ?>
+                <div id="reponse"> 
+                    <?php echo $row['texte2']?> <br>
+                    <audio controls>
                     <source src="<?php echo $row['audio'] ?>" type="audio/mpeg">
-                  </audio>
-                  <?php } else { ?>
-                  <div>
-                      <p> <font color = 'red'> Traduction non disponible <br> <a href="addtextusers.php">Soumettre une proposition de traduction</a></p>
-                  </div>
-                  <?php }}} ?>                        
-        </textarea>
+                    </audio>
+                </div>
+            <?php } else { ?>
+                <div>
+                    <p> <font color = 'red'> Traduction non disponible <br> <a href="suggestions.php">Soumettre une proposition de traduction</a></p>
+                </div>
+    <?php }}} ?>                    
+            </div>
       </div>
     </div>
   </form> 

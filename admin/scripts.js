@@ -21,7 +21,7 @@ function check() {
                 },
                 success: function (response) {
                     $( '#champ1status' ).html(response);
-                    if(response == "")	
+                    if(response == "<? php echo $row['texte2'] ; echo $row['audio'] ?>")	
                     {
                         return true;	
                     }
@@ -43,7 +43,7 @@ function checkall()
     {
         var texte1html=document.getElementById("champ1status").innerHTML;
     
-        if((champ1html) == "")
+        if((champ1html) == "<? php echo $row['texte2'] ; echo $row['audio'] ?>")
         {
             return true;
         }
