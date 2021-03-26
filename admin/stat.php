@@ -40,19 +40,11 @@
 
             var ctx = document.getElementById("chart").getContext("2d");
             var myChart = new Chart(ctx, {
-                type: 'line' ,
+                type: 'bar' ,
                 data: {
                     labels: [<?php echo $search; ?>],
                     datasets: 
                     [{
-                        label: 'search',
-                        data: [<?php echo $search; ?>],
-                        backgroundColor: 'transparent',
-                        borderColor: 'rgba (255,99,155) ',
-                        borderWidth: 3
-                    },
-
-                    {
                         label: 'count',
                         data: [<?php echo $count; ?>],
                         backgroundColor: 'transparent',
